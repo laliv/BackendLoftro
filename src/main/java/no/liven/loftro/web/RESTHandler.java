@@ -1,8 +1,11 @@
 package no.liven.loftro.web;
 
 import no.liven.loftro.db.DatabaseHandler;
+import no.liven.web.loftro.generated.tables.records.AfterhoursRecord;
 
-	import javax.ws.rs.GET;
+import java.util.ArrayList;
+
+import javax.ws.rs.GET;
 	import javax.ws.rs.Path;
 	import javax.ws.rs.Produces;
 	import javax.ws.rs.core.MediaType;
@@ -22,6 +25,13 @@ import no.liven.loftro.db.DatabaseHandler;
 	    @GET
 	    @Produces(MediaType.TEXT_PLAIN)
 	    public String getIt() {
-	        return "Got it now!";
+	    	DatabaseHandler dbh = new DatabaseHandler();
+	    	ArrayList<AfterhoursRecord> ahrl = dbh.getAfterHoursRecords();
+	    	StringBuffer sb = new StringBuffer();
+	    	for (AfterhoursRecord a : ahrl) {
+	    		sb.append("Name: " + a.getName());
+	    		sb.append("Type: " + a.getType());
+	    	}
+	        return sb.toString();
 	    }
 	}
