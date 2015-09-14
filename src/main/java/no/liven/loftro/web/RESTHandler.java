@@ -1,9 +1,6 @@
 package no.liven.loftro.web;
 
 import no.liven.loftro.db.DatabaseHandler;
-import no.liven.web.loftro.generated.tables.records.AfterhoursRecord;
-
-import java.util.ArrayList;
 
 import javax.ws.rs.GET;
 	import javax.ws.rs.Path;
@@ -23,15 +20,10 @@ import javax.ws.rs.GET;
 	     * @return String that will be returned as a text/plain response.
 	     */
 	    @GET
-	    @Produces(MediaType.TEXT_PLAIN)
+	    @Produces(MediaType.APPLICATION_JSON)
 	    public String getIt() {
 	    	DatabaseHandler dbh = new DatabaseHandler();
-	    	ArrayList<AfterhoursRecord> ahrl = dbh.getAfterHoursRecords();
-	    	StringBuffer sb = new StringBuffer();
-	    	for (AfterhoursRecord a : ahrl) {
-	    		sb.append("Name: " + a.getName());
-	    		sb.append("Type: " + a.getType());
-	    	}
-	        return sb.toString();
+
+	        return dbh.getAfterHoursRecords();
 	    }
 	}

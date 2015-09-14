@@ -8,6 +8,8 @@ import javax.annotation.Generated;
 
 import no.liven.web.loftro.generated.tables.Afterhours;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.jooq.Field;
 import org.jooq.Record1;
 import org.jooq.Record5;
@@ -34,6 +36,7 @@ public class AfterhoursRecord extends UpdatableRecordImpl<AfterhoursRecord> impl
 	/**
 	 * Setter for <code>loftro.afterhours.id</code>.
 	 */
+	@JsonIgnore
 	public void setId(Integer value) {
 		setValue(0, value);
 	}
@@ -41,6 +44,7 @@ public class AfterhoursRecord extends UpdatableRecordImpl<AfterhoursRecord> impl
 	/**
 	 * Getter for <code>loftro.afterhours.id</code>.
 	 */
+	@JsonIgnore
 	public Integer getId() {
 		return (Integer) getValue(0);
 	}
@@ -48,6 +52,7 @@ public class AfterhoursRecord extends UpdatableRecordImpl<AfterhoursRecord> impl
 	/**
 	 * Setter for <code>loftro.afterhours.type</code>.
 	 */
+	@JsonIgnore
 	public void setType(String value) {
 		setValue(1, value);
 	}
@@ -55,6 +60,7 @@ public class AfterhoursRecord extends UpdatableRecordImpl<AfterhoursRecord> impl
 	/**
 	 * Getter for <code>loftro.afterhours.type</code>.
 	 */
+	@JsonIgnore
 	public String getType() {
 		return (String) getValue(1);
 	}
@@ -62,6 +68,7 @@ public class AfterhoursRecord extends UpdatableRecordImpl<AfterhoursRecord> impl
 	/**
 	 * Setter for <code>loftro.afterhours.review</code>.
 	 */
+	@JsonIgnore
 	public void setReview(String value) {
 		setValue(2, value);
 	}
@@ -69,6 +76,7 @@ public class AfterhoursRecord extends UpdatableRecordImpl<AfterhoursRecord> impl
 	/**
 	 * Getter for <code>loftro.afterhours.review</code>.
 	 */
+	@JsonIgnore
 	public String getReview() {
 		return (String) getValue(2);
 	}
@@ -76,6 +84,7 @@ public class AfterhoursRecord extends UpdatableRecordImpl<AfterhoursRecord> impl
 	/**
 	 * Setter for <code>loftro.afterhours.name</code>.
 	 */
+	@JsonIgnore
 	public void setName(String value) {
 		setValue(3, value);
 	}
@@ -83,6 +92,7 @@ public class AfterhoursRecord extends UpdatableRecordImpl<AfterhoursRecord> impl
 	/**
 	 * Getter for <code>loftro.afterhours.name</code>.
 	 */
+	@JsonIgnore
 	public String getName() {
 		return (String) getValue(3);
 	}
@@ -90,6 +100,7 @@ public class AfterhoursRecord extends UpdatableRecordImpl<AfterhoursRecord> impl
 	/**
 	 * Setter for <code>loftro.afterhours.rate</code>.
 	 */
+	@JsonIgnore
 	public void setRate(Double value) {
 		setValue(4, value);
 	}
@@ -97,6 +108,7 @@ public class AfterhoursRecord extends UpdatableRecordImpl<AfterhoursRecord> impl
 	/**
 	 * Getter for <code>loftro.afterhours.rate</code>.
 	 */
+	@JsonIgnore
 	public Double getRate() {
 		return (Double) getValue(4);
 	}

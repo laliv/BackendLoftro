@@ -6,6 +6,8 @@ package no.liven.web.loftro.generated;
 
 import javax.annotation.Generated;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import no.liven.web.loftro.generated.tables.Afterhours;
 
 
@@ -25,5 +27,6 @@ public class Tables {
 	/**
 	 * The table loftro.afterhours
 	 */
+	@JsonIgnore
 	public static final Afterhours AFTERHOURS = no.liven.web.loftro.generated.tables.Afterhours.AFTERHOURS;
 }

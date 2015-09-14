@@ -9,6 +9,7 @@ import javax.annotation.Generated;
 import no.liven.web.loftro.generated.tables.Afterhours;
 import no.liven.web.loftro.generated.tables.records.AfterhoursRecord;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.jooq.Identity;
 import org.jooq.UniqueKey;
 import org.jooq.impl.AbstractKeys;
@@ -31,13 +32,13 @@ public class Keys {
 	// -------------------------------------------------------------------------
 	// IDENTITY definitions
 	// -------------------------------------------------------------------------
-
+	@JsonIgnore
 	public static final Identity<AfterhoursRecord, Integer> IDENTITY_AFTERHOURS = Identities0.IDENTITY_AFTERHOURS;
 
 	// -------------------------------------------------------------------------
 	// UNIQUE and PRIMARY KEY definitions
 	// -------------------------------------------------------------------------
-
+	@JsonIgnore
 	public static final UniqueKey<AfterhoursRecord> KEY_AFTERHOURS_PRIMARY = UniqueKeys0.KEY_AFTERHOURS_PRIMARY;
 
 	// -------------------------------------------------------------------------
@@ -50,10 +51,13 @@ public class Keys {
 	// -------------------------------------------------------------------------
 
 	private static class Identities0 extends AbstractKeys {
+		@JsonIgnore
 		public static Identity<AfterhoursRecord, Integer> IDENTITY_AFTERHOURS = createIdentity(Afterhours.AFTERHOURS, Afterhours.AFTERHOURS.ID);
 	}
 
 	private static class UniqueKeys0 extends AbstractKeys {
+		
+		@JsonIgnore
 		public static final UniqueKey<AfterhoursRecord> KEY_AFTERHOURS_PRIMARY = createUniqueKey(Afterhours.AFTERHOURS, Afterhours.AFTERHOURS.ID);
 	}
 }

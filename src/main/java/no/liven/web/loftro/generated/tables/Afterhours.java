@@ -13,6 +13,7 @@ import no.liven.web.loftro.generated.Keys;
 import no.liven.web.loftro.generated.Loftro;
 import no.liven.web.loftro.generated.tables.records.AfterhoursRecord;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.jooq.Field;
 import org.jooq.Identity;
 import org.jooq.Table;
@@ -39,6 +40,7 @@ public class Afterhours extends TableImpl<AfterhoursRecord> {
 	/**
 	 * The reference instance of <code>loftro.afterhours</code>
 	 */
+	@JsonIgnore
 	public static final Afterhours AFTERHOURS = new Afterhours();
 
 	/**
@@ -52,26 +54,31 @@ public class Afterhours extends TableImpl<AfterhoursRecord> {
 	/**
 	 * The column <code>loftro.afterhours.id</code>.
 	 */
+	@JsonIgnore
 	public final TableField<AfterhoursRecord, Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
 	 * The column <code>loftro.afterhours.type</code>.
 	 */
+	@JsonIgnore
 	public final TableField<AfterhoursRecord, String> TYPE = createField("type", org.jooq.impl.SQLDataType.VARCHAR.length(255), this, "");
 
 	/**
 	 * The column <code>loftro.afterhours.review</code>.
 	 */
+	@JsonIgnore
 	public final TableField<AfterhoursRecord, String> REVIEW = createField("review", org.jooq.impl.SQLDataType.VARCHAR.length(255), this, "");
 
 	/**
 	 * The column <code>loftro.afterhours.name</code>.
 	 */
+	@JsonIgnore
 	public final TableField<AfterhoursRecord, String> NAME = createField("name", org.jooq.impl.SQLDataType.VARCHAR.length(255), this, "");
 
 	/**
 	 * The column <code>loftro.afterhours.rate</code>.
 	 */
+	@JsonIgnore
 	public final TableField<AfterhoursRecord, Double> RATE = createField("rate", org.jooq.impl.SQLDataType.DOUBLE, this, "");
 
 	/**
@@ -100,6 +107,7 @@ public class Afterhours extends TableImpl<AfterhoursRecord> {
 	 * {@inheritDoc}
 	 */
 	@Override
+	@JsonIgnore
 	public Identity<AfterhoursRecord, Integer> getIdentity() {
 		return Keys.IDENTITY_AFTERHOURS;
 	}
@@ -108,6 +116,7 @@ public class Afterhours extends TableImpl<AfterhoursRecord> {
 	 * {@inheritDoc}
 	 */
 	@Override
+	@JsonIgnore
 	public UniqueKey<AfterhoursRecord> getPrimaryKey() {
 		return Keys.KEY_AFTERHOURS_PRIMARY;
 	}
@@ -116,6 +125,7 @@ public class Afterhours extends TableImpl<AfterhoursRecord> {
 	 * {@inheritDoc}
 	 */
 	@Override
+	@JsonIgnore
 	public List<UniqueKey<AfterhoursRecord>> getKeys() {
 		return Arrays.<UniqueKey<AfterhoursRecord>>asList(Keys.KEY_AFTERHOURS_PRIMARY);
 	}
