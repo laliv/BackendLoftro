@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script>
+
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("http://52.11.19.84:8080/Loftro/rest/resthandler")
+    .success(function(response) {$scope.commoditys = response;});
+});
+
+
+    	</script>
+	</head>
+
+	<body>
+	<div ng-app="myApp" ng-controller="customersCtrl"> 
+
+<ul>
+  <li ng-repeat="x in commoditys">
+    {{ x.name + ', ' + x.type }}
+  </li>
+</ul>
+
+</div>
+
+
+	</body>
+</html>
